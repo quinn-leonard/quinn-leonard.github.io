@@ -1,7 +1,69 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head>
+        <title>Quinn Leonard</title>
+        <link rel="stylesheet" href="landingStyles.css">
+        <meta name="description" content="Quinn Leonard: Entry-Level Computer Science & Software Development">
+        <meta name="keywords" content="Computer Science, Software Development, Software Engineering, Computer Engineering">
+        <meta name="author" content="Quinn Leonard">
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="headerTop">
+                <h1>Quinn Leonard</h1>
+                <h2>Computer Science & Software Development</h2>
+            </div>
+            <div class="menuBar">
+                <button id="aboutButton" class="currentTab">About Me</button>
+                <button id="projectsButton">Projects</button>
+                <button id="gamesButton">Games</button>
+                <button id="contactButton">Contact Me</button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="about currentTab">
+                <div class="aboutBox">
+                    <h2>About Page</h2>
+                    <p>Wiwiwi. Wiwiwi.</p>
+                </div>
+            </div>
+            <div class="projects">
+                <h2>Projects Page</h2>
+            </div>
+            <div class="games">
+                <h2>Games Page</h2>
+            </div>
+            <div class="contact">
+                <div class="contactBox">
+                    <h2>Get in Contact!</h2>
+                    <h3>Email: <a href="mailto:quinnpleonard@gmail.com">quinnpleonard@gmail.com</a></h3>
+                    <h3>Phone: <a href="tel:+14033830892">+1 (403) 383-0892</a></h3>
+                    <h3>LinkedIn: <a href="https://www.linkedin.com/in/quinn-leonard">www.linkedin.com/in/quinn-leonard</a></h3>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const tabs = {
+                aboutButton: "about",
+                projectsButton: "projects",
+                gamesButton: "games",
+                contactButton: "contact"
+            };
+
+            for (const [button, tab] of Object.entries(tabs)) {
+                document.getElementById(button).addEventListener("click", () => {
+                    for (const [btn, tb] of Object.entries(tabs)) {
+                        document.getElementById(btn).classList.remove("currentTab");
+                        document.querySelector("." + tb).classList.remove("currentTab");
+                    }
+                    document.getElementById(button).classList.add("currentTab");
+                    document.querySelector("." + tab).classList.add("currentTab");
+                });
+            }
+        </script>
+
+    </body>
 </html>
